@@ -3,6 +3,7 @@ import Parse from 'parse';
 import log from 'npmlog';
 import APNS from './APNS';
 import GCM from './GCM';
+import OneSignal from './OneSignal';
 import { classifyInstallations } from './PushAdapterUtils';
 
 const LOG_PREFIX = 'parse-server-push-adapter';
@@ -12,7 +13,7 @@ export class ParsePushAdapter {
   supportsPushTracking = true;
 
   constructor(pushConfig = {}) {
-    this.validPushTypes = ['ios', 'osx', 'tvos', 'android', 'fcm'];
+    this.validPushTypes = ['ios', 'osx', 'tvos', 'android', 'fcm', 'web'];
     this.senderMap = {};
     // used in PushController for Dashboard Features
     this.feature = {
@@ -34,6 +35,9 @@ export class ParsePushAdapter {
         case 'android':
         case 'fcm':
           this.senderMap[pushType] = new GCM(pushConfig[pushType]);
+          break;
+        case 'web':
+          this.senderMap[pushType] = new OneSignal(pushConfig[pushType]);
           break;
       }
     }
