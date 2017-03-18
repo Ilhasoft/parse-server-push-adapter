@@ -12,7 +12,8 @@ if (process.env.VERBOSE || process.env.VERBOSE_PARSE_SERVER_PUSH_ADAPTER) {
 import ParsePushAdapter from './ParsePushAdapter';
 import GCM from './GCM';
 import APNS from './APNS';
+import OneSignal from './OneSignal';
 import * as utils from './PushAdapterUtils';
 
 export default ParsePushAdapter;
-export { ParsePushAdapter, APNS, GCM, utils };
+export { ParsePushAdapter, APNS, GCM, OneSignal, utils };
