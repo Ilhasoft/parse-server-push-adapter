@@ -23,7 +23,6 @@ OneSignal.prototype.send = function(data, devices) {
 	for (var i = 0; i < devices.length; i++) {
 		player_ids.push(devices[i].deviceToken);
 	}
-
 	request(
 		{
 			method: 'POST',
