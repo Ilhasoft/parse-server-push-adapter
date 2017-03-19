@@ -35,7 +35,7 @@ OneSignal.prototype.send = function(data, devices) {
 			json: true,
 			body: {
 				'app_id': this.sender.appId,
-				'contents': { en: data.alert },
+				'contents': { en: data.data.alert },
 				'include_player_ids': player_ids
 			}
 		},
