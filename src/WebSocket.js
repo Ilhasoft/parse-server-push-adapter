@@ -32,7 +32,10 @@ WebSocket.prototype.send = function(data, devices) {
 				"content-type": "application/json"
 			},
 			json: true,
-			body: data.data
+			body: {
+				'include_player_ids': player_ids,
+				'data': data.data
+			}
 		},
 		function (error, response, body) {
 			if (!body.errors) {
