@@ -13,7 +13,7 @@ function Sender(appId, webSocketUrl) {
 function WebSocket(args) {
 	if (typeof args !== 'object' || !args.appId || !args.webSocketUrl) {
 		throw new Parse.Error(Parse.Error.PUSH_MISCONFIGURED,
-			'OneSignal Configuration is invalid');
+			'WebSocket Configuration is invalid');
 	}
 	this.sender = new Sender(args.appId, args.webSocketUrl);
 }
