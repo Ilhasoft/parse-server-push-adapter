@@ -13,7 +13,8 @@ import ParsePushAdapter from './ParsePushAdapter';
 import GCM from './GCM';
 import APNS from './APNS';
 import OneSignal from './OneSignal';
+import WebSocket from './WebSocket';
 import * as utils from './PushAdapterUtils';
 
 export default ParsePushAdapter;
-export { ParsePushAdapter, APNS, GCM, OneSignal, utils };
+export { ParsePushAdapter, APNS, GCM, OneSignal, WebSocket, utils };
